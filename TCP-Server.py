@@ -13,10 +13,10 @@ def main():
     client_handler.start()
 
 def handle_client(client_socket):
-    with client_socket as a sock:
+    with client_socket as sock:
         request = sock.recv(1024)
         print(f'[*] Received: {request.decode("utf-8")}')
         sock.send(b'ACK')
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     main()
